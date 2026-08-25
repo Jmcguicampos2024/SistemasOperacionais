@@ -1,0 +1,8 @@
+#!/bin/bash
+
+clear
+
+read -p"n1: " n1
+read -p"n2: " n2
+
+echo "Soma $(expr $n1 + $n2)"
