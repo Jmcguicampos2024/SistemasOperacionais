@@ -2,12 +2,11 @@
 
 clear
 
-read -p "Qual arquivo você deseja? " x
-locate $x
-
-case $x in 
-/aulas | grep rm $x
-
-echo "Arquivo Removido"
-
-then echo "Arquivo não encontrado"
+read -p "Qual arquivo você quer? " x
+y=$(ls | grep -i $x)
+if [ -e "$y" ]; then
+	rm "$y"
+	echo "Arquivo Deletado"
+else
+	echo "Arquivo Inexistente"
+fi
