@@ -1,0 +1,20 @@
+#!/bin/bash
+
+clear
+
+read -p "Qual arquivo você quer? " x
+echo "$x"
+y=$(ls | grep -i $x)
+if [ -e "$y" ]; then
+	read -p "Qual o diretório de destino? " w
+	z=$(ls | grep -i $w)
+	caminho=$(pwd)
+	if [ -d "$z" ]; then
+		mv "$y" "${caminho}/$z/"
+		echo "Arquivo movido para o diretorio $z com sucesso"
+	else
+		echo" Diretorio Inexistente"
+	fi
+else
+	echo "Arquivo Inexistente"
+fi
