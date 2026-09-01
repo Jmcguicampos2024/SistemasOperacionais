@@ -2,7 +2,41 @@
 
 clear
 
-read -p"n1: " n1
-read -p"n2: " n2
+read -p "Primeiro Número: " n1
+read -p "Segundo Numero: " n2
 
-echo "Soma $(expr $n1 + $n2)"
+echo "1.soma" 
+echo "2.subtração"
+echo "3.multiplicação"
+echo "4.divisão"
+echo "5.sair"
+
+read -p "Escolha a opção desejada:" n
+
+case $n in
+	1)
+	echo "Operação escolhida:Soma"
+	soma=$(expr $n1 + $n2)
+	echo "O Resultado é: $soma ";
+	;;
+	2)
+	echo "Operação escolhida:Subtração"
+	soma=$(expr $n1 - $n2)
+	echo "O Resultado é: $soma ";
+	;;
+	3)
+	echo "Operação escolhida:Multiplicação"
+	soma=$(expr $n1 \* $n2)
+	echo "O Resultado é: $soma ";
+	;;
+	4)
+	echo "Operação escolhida:Divisão"
+	soma=$(expr $n1 / $n2)
+	echo "O Resultado é: $soma ";
+	;;
+	5)
+	echo "Sistema Fechado"
+	;;
+	*)
+	echo "Erro:Escolha um numero valido"
+esac
