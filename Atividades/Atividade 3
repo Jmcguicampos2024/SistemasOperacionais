@@ -1,0 +1,15 @@
+#!/bin/bash
+
+clear
+
+read -p "Qual arquivo você quer? " x
+echo "$x"
+y=$(ls | grep -i $x)
+if [ -e "$y" ]; then
+	read -p "Qual o novo nome do arquivo? " w
+	mv "$y" "$w"
+	echo "Arquivo Renomeado"
+	echo "Novo nome é: $w"
+else
+	echo "Arquivo Inexistente"
+fi
