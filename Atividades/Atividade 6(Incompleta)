@@ -1,0 +1,19 @@
+#!/bin/bash
+
+clear
+
+read -p "Qual o nome do arquivo? " x
+y=$(ls | grep -i $x)
+if  [ -e "$y" ]; then
+	echo "Arquivo encontrado: $y"
+	read -p "Qual palavra do arquivo você quer encontar? " w 
+	grep -i "$w" "$y"
+	z=$(ls | grep -i $w)
+	if grep -q "$z" "$y"; then
+		echo "Palavra Encontrada: $z"
+	else
+		echo "Palavra Inexistente"
+	fi
+else
+	echo "Arquivo Inexistente"
+fi
