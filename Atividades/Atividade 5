@@ -1,0 +1,13 @@
+#!/bin/bash
+
+clear
+
+read -p "Qual o nome do usuario? " x
+y=$(cat "/etc/passwd" | grep user)
+r=$?
+if  [ "$r" -eq 0 ]; then
+	echo "Usuario encontrado"
+	echo "$y"
+else
+	echo "Usuario Inexistente"
+fi
